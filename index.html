@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LEO GOLD — Більше, ніж просто одяг</title>
+
+    <meta name="description"
+        content="LEO GOLD — одяг із характером. Наші соціальні мережі, договір публічної оферти та рекомендації з догляду за виробами.">
+
+    <meta name="theme-color" content="#F8F7F3">
+
+    <meta property="og:title" content="LEO GOLD — Більше, ніж просто одяг">
+    <meta property="og:description"
+        content="Відкрий світ LEO GOLD: наші соціальні мережі, умови замовлення та рекомендації з догляду за одягом.">
+    <meta property="og:type" content="website">
+
+    <style>
+        /* ========================================
+       LEO GOLD — DESIGN SYSTEM
+    ======================================== */
+
+        :root {
+            --bg: #F8F7F3;
+            --surface: #FFFFFF;
+            --text: #292923;
+            --muted: #77766F;
+            --gold: #B88E55;
+            --gold-dark: #96703F;
+            --gold-light: #E9D9BF;
+            --border: #E8E5DD;
+            --shadow: 0 12px 36px rgba(41, 41, 35, 0.045);
+            --radius: 18px;
+            --max-width: 480px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at 50% 0%,
+                    rgba(184, 142, 85, 0.09),
+                    transparent 44%),
+                var(--bg);
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .page {
+            width: min(100% - 32px, var(--max-width));
+            margin: 0 auto;
+            padding: 34px 0 22px;
+        }
+
+        /* ========================================
+       BRAND HEADER
+    ======================================== */
+
+        .brand {
+            text-align: center;
+            animation: fade-up 0.7s ease both;
+        }
+
+        .brand-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 68px;
+            margin-bottom: 18px;
+            border: 1px solid var(--gold-light);
+            border-radius: 50%;
+            color: var(--gold-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            letter-spacing: -2px;
+            background: rgba(255, 255, 255, 0.62);
+        }
+
+        .brand-name {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 8vw, 39px);
+            line-height: 1.1;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            padding-left: 0.15em;
+        }
+
+        .brand-tagline {
+            margin: 13px 0 0;
+            color: var(--muted);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .gold {
+            color: var(--gold);
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 27px 0 24px;
+        }
+
+        .ornament::before,
+        .ornament::after {
+            content: "";
+            width: 54px;
+            height: 1px;
+            background: var(--gold-light);
+        }
+
+        .ornament span {
+            width: 6px;
+            height: 6px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        /* ========================================
+       INTRODUCTION
+    ======================================== */
+
+        .intro {
+            margin: 0 0 25px;
+            text-align: center;
+            animation: fade-up 0.7s 0.08s ease both;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: var(--gold-dark);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .intro h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        .intro p {
+            max-width: 330px;
+            margin: 10px auto 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        /* ========================================
+       LINK CARDS
+    ======================================== */
+
+        .links {
+            display: grid;
+            gap: 11px;
+            animation: fade-up 0.7s 0.16s ease both;
+        }
+
+        .link-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-height: 75px;
+            padding: 15px 17px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: var(--shadow);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .link-card::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            content: "";
+            background: var(--gold);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.25s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold-light);
+            background: var(--surface);
+            box-shadow: 0 15px 35px rgba(41, 41, 35, 0.075);
+        }
+
+        .link-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .link-icon {
+            display: flex;
+            flex: 0 0 43px;
+            align-items: center;
+            justify-content: center;
+            width: 43px;
+            height: 43px;
+            border: 1px solid var(--gold-light);
+            border-radius: 14px;
+            background: #FBF8F2;
+            color: var(--gold-dark);
+        }
+
+        .link-icon svg {
+            display: block;
+            width: 21px;
+            height: 21px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .link-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-title {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            line-height: 1.35;
+            font-weight: 650;
+            letter-spacing: 0.005em;
+        }
+
+        .link-description {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .link-arrow {
+            display: flex;
+            flex: 0 0 28px;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            color: var(--gold);
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .link-arrow svg {
+            width: 17px;
+            height: 17px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .link-card:hover .link-arrow {
+            transform: translateX(3px);
+            background: #F7F0E5;
+        }
+
+        /* ========================================
+       SECTION DIVIDER
+    ======================================== */
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 29px 0 13px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.19em;
+            text-transform: uppercase;
+        }
+
+        .section-label::after {
+            flex: 1;
+            height: 1px;
+            content: "";
+            background: var(--border);
+        }
+
+        /* ========================================
+       FOOTER
+    ======================================== */
+
+        .footer {
+            padding: 30px 0 5px;
+            text-align: center;
+            animation: fade-up 0.7s 0.25s ease both;
+        }
+
+        .footer-brand {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+            letter-spacing: 0.23em;
+            padding-left: 0.23em;
+        }
+
+        .footer-motto {
+            margin: 9px 0 18px;
+            color: var(--muted);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .footer-line {
+            width: 38px;
+            height: 1px;
+            margin: 0 auto 15px;
+            background: var(--gold-light);
+        }
+
+        .footer-copy {
+            margin: 0;
+            color: #96948C;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-copy a {
+            color: var(--gold-dark);
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s ease;
+        }
+
+        .footer-copy a:hover {
+            text-decoration-color: currentColor;
+        }
+
+        /* ========================================
+       ANIMATION
+    ======================================== */
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+        @media (min-width: 600px) {
+            .page {
+                padding-top: 48px;
+                padding-bottom: 32px;
+            }
+
+            .brand-mark {
+                width: 74px;
+                height: 74px;
+            }
+
+            .ornament {
+                margin-top: 31px;
+                margin-bottom: 29px;
+            }
+
+            .intro h2 {
+                font-size: 27px;
+            }
+
+            .link-card {
+                min-height: 80px;
+                padding: 17px 19px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+
+        /* CONTACT LINKS */
+
+        .contact-links {
+            display: grid;
+            gap: 9px;
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 13px 15px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.65);
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--gold-light);
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            display: flex;
+            flex: 0 0 40px;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold-light);
+            border-radius: 12px;
+            background: #FBF8F2;
+            color: var(--gold-dark);
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-title,
+        .contact-description {
+            display: block;
+        }
+
+        .contact-title {
+            margin-bottom: 4px;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 650;
+            line-height: 1.4;
+        }
+
+        .contact-description {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <!-- BRAND -->
+        <header class="brand">
+            <div class="brand-mark" aria-hidden="true">LG</div>
+
+            <h1 class="brand-name">LEO <span class="gold">GOLD</span></h1>
+
+            <p class="brand-tagline">
+                Стиль — у деталях
+                Турбота — у звичках
+            </p>
+
+            <div class="ornament" aria-hidden="true">
+                <span></span>
+            </div>
+        </header>
+
+        <!-- INTRO -->
+        <section class="intro" aria-labelledby="intro-title">
+            <p class="eyebrow">Welcome to our world</p>
+
+            <h2 id="intro-title">
+                Твій простір <span class="gold">LEO GOLD</span>
+            </h2>
+
+            <p>
+                Знайомся з брендом ближче, стеж за новинками
+                та знаходь усе необхідне в одному місці.
+            </p>
+        </section>
+
+        <!-- SOCIAL LINKS -->
+        <nav class="links" aria-label="Соціальні мережі">
+
+            <!-- INSTAGRAM: ВСТАВ СВОЄ ПОСИЛАННЯ -->
+            <a class="link-card" href="https://www.instagram.com/leo_gold.brand/" target="_blank"
+                rel="noopener noreferrer" aria-label="Відкрити Instagram LEO GOLD">
+                <span class="link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                </span>
+
+                <span class="link-content">
+                    <span class="link-title">Instagram</span>
+                    <span class="link-description">
+                        Колекції, образи та новинки
+                    </span>
+                </span>
+
+                <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- TIKTOK: ВСТАВ СВОЄ ПОСИЛАННЯ -->
+            <a class="link-card" href="https://www.tiktok.com/@leo.gold_brand" target="_blank" rel="noopener noreferrer"
+                aria-label="Відкрити TikTok LEO GOLD">
+                <span class="link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 4v10.2a4.3 4.3 0 1 1-4-4.3"></path>
+                        <path d="M14 4c.5 3 2.3 4.7 5 5"></path>
+                    </svg>
+                </span>
+
+                <span class="link-content">
+                    <span class="link-title">TikTok</span>
+                    <span class="link-description">
+                        Відео, деталі та життя бренду
+                    </span>
+                </span>
+
+                <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- THREADS: ВСТАВ СВОЄ ПОСИЛАННЯ -->
+            <a class="link-card" href="https://www.threads.com/@leo_gold.brand" target="_blank"
+                rel="noopener noreferrer" aria-label="Відкрити Threads LEO GOLD">
+                <span class="link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21c-5.2 0-8.5-3.6-8.5-9S6.8 3 12 3c4.5 0 7.2 2.6 8 6.4"></path>
+                        <path
+                            d="M8.3 9.1c.8-1.2 2.1-1.8 3.8-1.8 3.2 0 5.4 2.2 5.4 5.1 0 2.5-1.5 4.3-3.9 4.3-1.8 0-3-.9-3-2.4 0-1.3 1-2.2 2.5-2.2 2.2 0 4.2 1 5.5 2.7">
+                        </path>
+                    </svg>
+                </span>
+
+                <span class="link-content">
+                    <span class="link-title">Threads</span>
+                    <span class="link-description">
+                        Думки, новини та спілкування
+                    </span>
+                </span>
+
+                <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </span>
+            </a>
+            <!-- CONTACTS -->
+
+
+            <!-- EMAIL -->
+            <a class="contact-link" href="mailto:leogold.brand@gmail.com">
+                <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="m3 7 9 6 9-6"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="contact-title">Електронна пошта</span>
+                    <span class="contact-description">Написати нам листа</span>
+                </span>
+            </a>
+
+            <!-- TELEGRAM -->
+            <a class="contact-link" href="https://t.me/leo_gold_brand" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="m21 3-7.1 18-4-8-8-4z"></path>
+                        <path d="M21 3 9.9 13"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="contact-title">Telegram</span>
+                    <span class="contact-description">Зв'язатися з нами</span>
+                </span>
+            </a>
+
+            <!-- WHOLESALE TELEGRAM GROUP -->
+            <a class="contact-link" href="https://t.me/+iM1N1x-qUPM1NDZi" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="9" cy="8" r="3"></circle>
+                        <path d="M3 20v-2a6 6 0 0 1 12 0v2"></path>
+                        <path d="M16 5.5a3 3 0 0 1 0 5.8"></path>
+                        <path d="M18 14a5 5 0 0 1 3 4.5V20"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="contact-title">Оптова Telegram-група</span>
+                    <span class="contact-description">Асортимент та оптові ціни</span>
+                </span>
+            </a>
+
+
+        </nav>
+
+        <!-- INFORMATION -->
+        <div class="section-label">
+            Інформація для покупців
+        </div>
+
+        <nav class="links" aria-label="Інформація для покупців">
+
+            <!-- PUBLIC OFFER: ЗАМІНИ ПОСИЛАННЯ -->
+            <a class="link-card" href="https://ТВОЄ-ПОСИЛАННЯ-НА-ОФЕРТУ" target="_blank" rel="noopener noreferrer"
+                aria-label="Переглянути договір публічної оферти">
+                <span class="link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 3h7l5 5v13H7z"></path>
+                        <path d="M14 3v5h5"></path>
+                        <path d="M10 13h6"></path>
+                        <path d="M10 17h6"></path>
+                    </svg>
+                </span>
+
+                <span class="link-content">
+                    <span class="link-title">Договір публічної оферти</span>
+                    <span class="link-description">
+                        Умови замовлення, оплати та повернення
+                    </span>
+                </span>
+
+                <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </span>
+            </a>
+
+            <!-- CARE PAGE: ГОТОВЕ ПОСИЛАННЯ -->
+            <a class="link-card" href="https://leo-gold-brand.github.io/dohlyad-za-odyahom/" target="_blank"
+                rel="noopener noreferrer" aria-label="Відкрити рекомендації з догляду за одягом">
+                <span class="link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 4 12 6l4-2 5 4-3 4v9H6v-9L3 8z"></path>
+                        <path d="M9 4a3 3 0 0 0 6 0"></path>
+                        <path d="M9 15h6"></path>
+                    </svg>
+                </span>
+
+                <span class="link-content">
+                    <span class="link-title">Догляд за виробом</span>
+                    <span class="link-description">
+                        Як зберегти вигляд і якість улюбленого одягу
+                    </span>
+                </span>
+
+                <span class="link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </span>
+            </a>
+
+        </nav>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p class="footer-brand">
+                LEO <span class="gold">GOLD</span>
+            </p>
+
+            <p class="footer-motto">
+                Турбота — у звичках
+            </p>
+
+            <div class="footer-line"></div>
+
+            <p class="footer-copy">
+                © 2025-<span id="year">2026</span> LEO GOLD.
+                Усі права захищено.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Автоматичне оновлення року у футері
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+
+</html>
